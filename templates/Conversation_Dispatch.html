@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static' , filename='assets/Conversations/fonts/icomoon/style.css')}}">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static' , filename='assets/Conversations/css/bootstrap.min.css')}}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{url_for('static' , filename='assets/Conversations/css/style.css')}}">
+
+    <title>Wave - Dispatch </title>
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+
+              <h3 class="heading mb-4">Let's talk about everything!</h3>
+              <p>  A proper communication delivery channel outputs a smart,  effective and informed society </br> Clyde Javis
+             </p>
+
+              <p><img src="{{url_for('static' , filename='assets/Conversations/images/undraw-contact.svg')}}" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-6">
+
+              <form class="mb-5"  action="{{url_for('Dispatch')}}" method="POST" enctype="multipart/form-data" >
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="MessID" id="name" placeholder="Message ID "  value="{{Generate_Secure_Token()}}" hidden >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <select type="text" class="form-control" name="Platform" id="name" placeholder=" Intended Platform " >
+                        <option selected> Choose Delivery Platform </option>
+                        <option value="Whatsapp"> Whatsapp</option>
+                        <option value="PesaYako"> Paid Premium
+                            </option>
+                        </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="Profile" id="subject" placeholder=" Sender Profile"  value="{{Session_Profile}}" hidden >
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="col-md-12 form-group">
+                    <select type="text" class="form-control" name="Department" id="name" placeholder="Target Department ">
+                        <option selected> Configure Your Department  </option>
+                        <option value="ICT"> Mechanical </option>
+                        <option value="All"> All </option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <select type="text" class="form-control" name="Course" id="name" placeholder=" Target Course ">
+                        <option selected>  Choose Your Course </option>
+                        <option value="Mechanical"> Mech Eng </option>
+                        </select>
+                  </div>
+                </div>
+                <div class="row">
+                 <div class="col-md-12 form-group">
+                   <select type="text" class="form-control" name="Certfication" id="name" placeholder="Certification">
+                       <option selected> Choose Your Certification </option>
+                       <option value="Diploma">
+                           Diploma
+                       </option>
+                       <option value="Cerificate">
+                           Certificate
+                       </option>
+
+
+                       </select>
+                 </div>
+               </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="Term" id="subject" placeholder="Year / Module ">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <select type="text" class="form-control" name="Accounts" id="name" placeholder="Account State">
+                        <option selected> Configure Account Status
+                        </option>
+                        <option value="Active"> Active</option>
+                        </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <select type="text" class="form-control" name="Files" id="subject" placeholder="Attachment">
+                        <option selected>
+                            Attach A Resource  </option>
+                        <option value="Resource"> Resource</option>
+                        </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="Subject" id="message" cols="30" rows="7" placeholder="Write your message"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="time" class="form-control" name="ExecTime" id="subject" placeholder="ExecutionTime">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="date" class="form-control" name="ExecDate" id="subject" placeholder="ExecutionDate">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <input type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+              <div id="form-message-warning mt-4"></div>
+              <div id="form-message-success">
+                Your message was sent, thank you!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <script src="{{url_for('static' , filename="assets/Conversations/js/jquery-3.3.1.min.js")}}"></script>
+    <script src="{{url_for('static' , filename="assets/Conversations/js/popper.min.js")}}"></script>
+    <script src="{{url_for('static' , filename='assets/Conversations/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static' , filename="assets/Conversations/js/jquery.validate.min.js")}}"></script>
+    <script src="{{url_for('static' , filename='assets/Conversations/js/main.js')}}"></script>
+
+  </body>
+</html>

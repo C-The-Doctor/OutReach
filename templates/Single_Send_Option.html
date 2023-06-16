@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Wave : Single SSO </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/LiquidSession/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/LiquidSession/css/style.css')}}">
+</head>
+<body>
+
+    <div class="main">
+
+        <h1> Wave - Single SSO </h1>
+        <div class="container">
+            <div class="sign-up-content">
+
+                    <h2 class="form-title">  Wave Dispatch Settings </h2>
+                    <div class="form-radio">
+
+                        <input type="radio"  value="newbie" id="newbie" checked="checked"  />
+                        <label for="newbie"><a href="{{url_for('Dispatch')}}"> Custom  </a> </label>
+
+                        <input type="radio" value="average" id="average"  />
+                        <label for="average"><a href="{{url_for('GroupSend' , UniqueID = Session_Profile )}}"> Group  </a> </label>
+
+                        <input type="radio"  value="master" id="master" />
+                        <label for="master"><a href="{{url_for('GroupSend' , UniqueID = Session_Profile )}}"> Single  </a> </label>
+                    </div>
+                    <div class="form-textbox">
+  <form method="POST"  action="{{url_for('LoadProfiles')}}" class="signup-form" >
+                        <select type="select" name="Certification" id="name" >
+   <option selected> &nbsp &nbsp Select Certification  </option>
+   <option value="All"> All </option>
+                            </select>
+                    </div>
+                    <div class="form-textbox">
+
+                        <select type="select" name="CourseProfile" id="name" >
+   <option selected> &nbsp &nbsp Select Course Profile   </option>
+   <option value="All"> All </option>
+                            </select>
+                    </div>
+
+
+<div class="form-textbox">
+
+                        <input type="number" name="Semester" id="name" >
+
+                    </div>
+
+                    <div class="form-textbox">
+
+                        <select type="select" name="Criteria" id="name" >
+                  <option selected> &nbsp &nbsp Select Criteria Profile   </option>
+                  <option value="Active"> Active </option>
+                            </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>Initialize Emergency Services System  <a href="#" class="term-service"> Terms </a></label>
+                    </div>
+
+                    <div class="form-textbox">
+                        <input type="submit" name="submit" id="submit" class="submit" value="Execute" />
+                    </div>
+                </form>
+
+                <p class="loginhere">
+                    Cant Figure Out Whats Best For You ?<a href="#" class="loginhere-link"> Infomercial
+                 </a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{{url_for('static', filename='assets/LiquidSession/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/LiquidSession/js/main.js')}}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

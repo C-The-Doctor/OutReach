@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title> Wave - Group Creator </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{{url_for('static' , filename="assets/Grouping/fonts/linearicons/style.css")}}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{url_for('static' , filename="assets/Grouping/css/style.css")}}">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<img src="{{url_for('static' , filename="assets/Grouping/images/image-1.png")}}" alt="" class="image-1">
+				<form action="{{url_for('GroupCreation')}}" method="POST">
+					<h3> Create New Group </h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Configure Group Token" name="Token" value="3453453453455">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Configure Group Name" name="GroupName">
+					</div>
+			<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" placeholder="Configure Group Category " name="Category">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<textarea type="text" class="form-control" placeholder="Configure Group Description" name="Descriptor">
+						    </textarea>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="text" class="form-control" placeholder="Group Administrator" name="Admin" value="max" hidden>
+					</div>
+					
+					<button type="submit">
+						<span>Register Group </span>
+					</button>
+				</form>
+				<img src="{{url_for('static' , filename="assets/Grouping/images/image-2.png")}}" alt="" class="image-2">
+			</div>
+			
+		</div>
+		
+		<script src="{{url_for('static' , filename="assets/Grouping/js/jquery-3.3.1.min.js")}}"></script>
+		<script src="{{url_for('static' , filename="assets/Grouping/js/main.js")}}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

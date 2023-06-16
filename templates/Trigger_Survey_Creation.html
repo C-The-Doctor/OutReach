@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FormWizard_v4</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{{url_for('static' , filename='fonts/material-design-iconic-font/css/material-design-iconic-font.css')}}">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="{{url_for('static' , filename='assets/Groups/vendor/date-picker/css/datepicker.min.css')}}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{url_for('static' , filename='assets/Groups/css/style.css')}}">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="image-holder">
+				<img src="{{url_for('static', filename='assets/Groups/images/form-wizard.png')}}" alt="">
+			</div>
+                                           
+      <form  action="{{url_for('ExecuteSurvey')}}" method="POST" enctype="multipart/form-data" >
+            	<div class="form-header">
+            		<a href="#"> Survey Center </a>
+            		<h3> Create Your Survey Here </h3>
+            	</div>
+            	<div id="wizard">
+            		<!-- SECTION 1 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="form-row" style="margin-bottom: 26px;">
+	                    	<label for="">
+	                    		Survey Token 
+	                    	</label>
+	                    	<div class="form-holder">
+	                    			                    		<input type="text" class="form-control" name="Token" value={{Generate_Secure_Token()}} >
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                    	 Survey Type 
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select  id="" class="form-control"  name="Type">
+									<option value="canvas" class="option">Canvas</option>
+									<option value="svg" class="option">Svg</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                       Department:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select  id="" class="form-control" name="Department">
+									<option value="florida" class="option">University of Florida</option>
+									<option value="havard" class="option">University of Havard</option>
+									<option value="oxford" class="option">University of Oxford</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                    	Course
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select n id="" class="form-control" name="Course">
+	                    			<option value="" selected disabled>Select Course</option>
+									<option value="term 1" class="option">Term 1</option>
+									<option value="term 2" class="option">Term 2</option>
+									<option value="term 3" class="option">Term 3</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Certification 
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Certfication">
+	                    	</div>
+	                    </div>		
+	                </section>
+	                
+					<!-- SECTION 2 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Year / Module
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd - mm - yyyy" id="dp1" name="Term">
+	                    	</div>
+	                    </div>	
+	                  
+
+
+	                   <div class="form-row" style="margin-bottom: 50px;">
+	                    	<label for="">
+	                    		Gender:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<div class="checkbox-circle">
+									<label class="male">
+										<input type="radio" name="gender" value="male" checked> Male<br>
+										<span class="checkmark"></span>
+									</label>
+									<label class="female">
+										<input type="radio" name="gender" value="female"> Female<br>
+										<span class="checkmark"></span>
+									</label>
+									<label>
+										<input type="radio" name="gender" value="transgender">Transgender<br>
+										<span class="checkmark"></span>
+									</label>
+								</div>
+	                    	</div>
+	                    </div>		
+
+	                 
+	                   
+	                </section>
+
+	                <!-- SECTION 3 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    	 Survey Question One
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Question1">
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row">
+	                    	<label for="">
+	                        Survey Question Two 
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Question2">
+	                    	</div>
+	                    </div>	
+                     	<div class="form-row">
+	                    	<label for="">
+	                        Survey Question Three
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Question3">
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row" style="margin-bottom: 38px">
+	                    	<label for="">
+	                        Survey Question Four
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Question4">
+	                    	</div>
+	                    </div>	
+	                    <div class="form-row" style="margin-bottom: 38px">
+	                    	<label for="">
+	                        Survey Question Five
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Question5">
+	                    	</div>
+	                    </div>	
+	                     <div class="form-row" style="margin-bottom: 38px">
+	                    	
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="Owner" value="max" hidden>
+	                    	</div>
+	                    </div>
+	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
+							<label>
+								<input type="checkbox" checked> Responses from your survey will be received soon if configured !
+								<span class="checkmark"></span>
+							</label>
+						</br>
+							<button type="submit" class="form-control">  Submit </button>
+						</div>
+	                </section>
+            	</div>
+            </form>
+		</div>
+
+		<script src="{{url_for('static', filename='assets/Groups/js/jquery-3.3.1.min.js')}}"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src="{{url_for('static', filename='assets/Groups/js/jquery.steps.js')}}"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="{{url_for('static', filename='assets/Groups/vendor/date-picker/js/datepicker.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/Groups/vendor/date-picker/js/datepicker.en.js')}}"></script>
+
+		<script src="{{url_for('static', filename='assets/Groups/js/main.js')}}"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

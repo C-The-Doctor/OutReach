@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> Upload Link </title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="{{url_for('static', filename='assets/ulink/UploaderStyle.css')}}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Navbar-->
+<header class="header">
+	<nav class="navbar navbar-expand-lg navbar-light py-3">
+		<div class="container">
+			<!-- Navbar Brand -->
+			<a href="#" class="navbar-brand">
+				<img src="https://res.cloudinary.com/mhmd/image/upload/v1571398888/Group_1514_tjekh3_zkts1c.svg" alt="logo" width="150">
+			</a>
+		</div>
+	</nav>
+</header>
+
+				<form  action="{{url_for('CreateUpload')}}" method="POST" enctype="multipart/form-data" >
+<div class="container">
+	<div class="row py-5 mt-4 align-items-center">
+		<!-- For Demo Purpose -->
+		<div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+			<img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+			<h1> Create an Upload Link </h1>
+			<p class="font-italic text-muted mb-0"> Upload Links Are Designed To Alow Your And Your Target To Exchange Files Securely Over SSH Technology . Complete The Form To Fire An Upload Link . </p>
+			<p class="font-italic text-muted"> Available Links  <a href="https://bootstrapious.com" class="text-muted">
+					<u> Launch </u></a>
+			</p>
+		</div>
+
+		<!-- Registeration Form -->
+		<div class="col-md-7 col-lg-6 ml-auto">
+	
+				<div class="row">
+
+					<!-- First Name -->
+					<div class="input-group col-lg-6 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-user text-muted"></i>
+							</span>
+						</div>
+						<input id="firstName" type="text" name="LinkID" placeholder="Link ID" class="form-control bg-white border-left-0 border-md" value="{{Generate_Secure_Token()}}">
+					</div>
+
+					<!-- Last Name -->
+					<div class="input-group col-lg-6 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-user text-muted"></i>
+							</span>
+						</div>
+						<input id="Link Name" type="text" name="Link Name" placeholder="Configure Link Name " class="form-control bg-white border-left-0 border-md">
+					</div>
+
+					<!-- Email Address -->
+					<div class="input-group col-lg-12 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-envelope text-muted"></i>
+							</span>
+						</div>
+						<select id="text" type="text" name="Certification" placeholder=" Configure Certification Level " class="form-control bg-white border-left-0 border-md">
+					<option selected>Configure Your Certification			    
+					</option> 
+					<option value="Certificate"> Certificate</option>
+					<option value="Diploma"> Diploma </option>
+						    </select>
+					</div>
+
+		<!-- Email Address -->
+					<div class="input-group col-lg-12 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-envelope text-muted"></i>
+							</span>
+						</div>
+						<select id="text" type="text" name="Course" placeholder=" Configure Course Name " class="form-control bg-white border-left-0 border-md">
+						    <option selected> Configure Your Course </option>
+						    <option value="Tailoring"> Tailoring </option>
+						    <option value="All"> All</option>
+						    </select>
+					</div>
+
+		<!-- Email Address -->
+					<div class="input-group col-lg-12 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-envelope text-muted"></i>
+							</span>
+						</div>
+						<input id="number" type="type" name="Module" placeholder=" Configure Module Level" class="form-control bg-white border-left-0 border-md">
+					</div>
+
+
+
+
+			
+					<!-- Password -->
+					<div class="input-group col-lg-6 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-lock text-muted"></i>
+							</span>
+						</div>
+						<input id="date" type="date" name="Expiry" placeholder="Link Expires On " class="form-control bg-white border-left-0 border-md">
+					</div>
+
+					<!-- Password Confirmation -->
+					<div class="input-group col-lg-6 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-lock text-muted"></i>
+							</span>
+						</div>
+						<textarea name="Descriptor" placeholder=" Describe Your Link " class="form-control bg-white border-left-0 border-md">
+						    </textarea>
+					</div>
+
+		<!-- Password Confirmation -->
+					<div class="input-group col-lg-6 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-lock text-muted"></i>
+							</span>
+						</div>
+						<input id="Owner" type="text" name="Admin" placeholder="Link Owner" class="form-control bg-white border-left-0 border-md" value="{{Session_Profile}}" hidden>
+					</div>
+
+					<!-- Submit Button -->
+				
+							<button type="submit" class="form-group col-lg-12 mx-auto mb-0">Create your account</button>
+	
+
+					<!-- Divider Text -->
+					<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+						<div class="border-bottom w-100 ml-5"></div>
+						<span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+						<div class="border-bottom w-100 mr-5"></div>
+					</div>
+
+	
+
+		
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+<script  src="{{url_for('static', filename='assets/ulink/UploaderSett.js')}}"></script>
+
+</body>
+</html>

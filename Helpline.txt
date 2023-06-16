@@ -1,0 +1,36 @@
+#  Key Points
+*  We Need Another DB to hold records for Group And Single SSO
+  - Heres The Plan
+   1. Have N number Of Rows 4 For Data Entry
+   2. Have An Extra COlumn To Show Targ Type - Group / Single
+   3. Join Other Operational Data To Form An Array And SHove It To DB For Both  Route
+
+
+ #  Groupigns
+
+  * Our Group Route DOesnt Return Relevant Groups Belonging TO A User .
+   It ONly DOes WHen Theirs Only One ENtry In The Data Returned From Sql .
+   This Problem Lies In Create_Link_DBContext
+   WHere Pinpointing To Groups That A User Has Subscribed TO seems problematic
+
+
+
+   # Conversations & Upload LInks
+
+   * Retreiving Entries From DB With More Than One Parameter Specified In The Sql Statement Fails
+   * We NEed This TO Rereive Conversations For Students Based On Their Course , Certification , Year
+
+
+
+   # Activities
+
+   * Retreiving Activities ALso Fails Which IS Crucial As Its Passed To The Dashboard Context
+   * Method 1
+          : We Get The Groups From The User , Retreive All Of Their Activities
+          : Adjoin Into An Array Then Return THe Array
+
+          -or-
+
+          :We Can Retreive All Activities From The DB , then We Filter In The Front End
+          :By -- Selecting All GroupIDs Assoc With An activity
+          -- Skipping Those Whose Group ID Font Match The Search Query , E.g ['DNA_OO1' , 'DXB-2235']

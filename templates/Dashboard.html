@@ -1,0 +1,977 @@
+<!--
+=========================================================
+* Material Dashboard 2 - v3.0.4
+=========================================================
+
+* Product Page: https://www.The_Doctor.com/product/material-dashboard
+* Copyright 2022 Creative Tim (https://www.The_Doctor.com)
+* Licensed under MIT (https://www.The_Doctor.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+   <!DOCTYPE html>
+<html lang="en">
+<style>
+
+  /* animation 1 */
+  .animation-loading {
+    background: #fff;
+    border: 1px solid #e5e6e9;
+    border-radius: 3px;
+    display: block;
+    height: 200px;
+    width: 500px;
+    padding: 12px;
+  }
+  .animation-loading .container {
+    width: 100%;
+    height: 30px;
+  }
+  .animation-loading .item {
+    position: relative;
+    background-color: #ccc;
+    height: 6px;
+    animation: animate 2s linear infinite;
+  }
+  .animation-loading .one {
+    left: 0;
+    height: 50px;
+    width: 50px;
+  }
+  .animation-loading .two {
+    left: 70px;
+    top: -38px;
+    width: 25%;
+  }
+  .animation-loading .three {
+    left: 70px;
+    top: -25px;
+    width: 15%;
+  }
+  .animation-loading .four {
+    left: 0;
+    top: 40px;
+    width: 80%;
+  }
+  .animation-loading .five {
+    left: 0;
+    top: 55px;
+    width: 90%;
+  }
+  .animation-loading .six {
+    left: 0;
+    top: 70px;
+    width: 50%;
+  }
+
+  @keyframes animate {
+    from {
+      trainsition: none;
+    }
+    to {
+      background-color: #f6f7f8;
+      trainsion: all 0.3s ease-out;
+    }
+  }
+  /* animation 2 */
+  .animation-loading-2 {
+    margin-top: 30px;
+    background: #fff;
+    border: 1px solid #e5e6e9;
+    border-radius: 3px;
+    display: block;
+    height: 200px;
+    width: 500px;
+    padding: 12px;
+  }
+  .animation-loading-2 .container {
+    width: 100%;
+    height: 30px;
+  }
+  .animation-loading-2 .item {
+    position: relative;
+    background-color: #ccc;
+    height: 6px;
+    animation: animate-2 2s linear infinite;
+    background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+    background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    -webkit-background-size: 800px 104px;
+  }
+  .animation-loading-2 .one, .animation-loading-2 .two, .animation-loading-2 .three {
+    display: inline-block;
+  }
+  .animation-loading-2 .one {
+    height: 50px;
+    width: 50px;
+  }
+  .animation-loading-2 .two {
+    margin-left: 10px;
+    height: 50px;
+    width: 25%;
+  }
+  .animation-loading-2 .three {
+    margin-left: 10px;
+    height: 50px;
+    width: 15%;
+  }
+  .animation-loading-2 .four {
+    left: 0;
+    top: 40px;
+    width: 80%;
+  }
+  .animation-loading-2 .five {
+    left: 0;
+    top: 55px;
+    width: 90%;
+  }
+  .animation-loading-2 .six {
+    left: 0;
+    top: 70px;
+    width: 50%;
+  }
+  .animation-loading-2 .seven {
+    left: 0;
+    top: 85px;
+    width: 60%;
+  }
+
+  @keyframes animate-2 {
+    0% {
+      background-position: -750px 0;
+    }
+    100% {
+      bacgkround-position: 750px 0;
+    }
+  }
+  </style>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static',filename="assets/img/apple-icon.png")}}">
+  <link rel="icon" type="image/png" href="{{url_for('static',filename="assets/img/favicon.png")}}">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>
+    WAVE PRO : DASHBOARD
+  </title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href="{{url_for('static',filename="assets/css/nucleo-icons.css")}}" rel="stylesheet" />
+  <link href="{{url_for('static',filename="assets/css/nucleo-svg.css")}}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{url_for('static',filename="assets/css/material-dashboard.css")}}" rel="stylesheet" />
+</head>
+    <body class="g-sidenav-show  bg-gray-200">
+      <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+        <div class="container-fluid ps-2 pe-0">
+          <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
+            Wave Educational
+          </a>
+          <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                  <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
+                 Accounts
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link me-2" href="../pages/sign-up.html">
+                  <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+                 Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-2" href="{{url_for('Explorer' , UniqueID = Session_Profile )}}">
+                  <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                  Explorer
+                </a>
+              </li>
+              <li class="nav-item">
+            <a class="nav-link me-2" href="{{url_for('Login')}}>
+              <i class="fa fa-user opacity-6 text-dark me-1"></i>
+              Direct-X
+            </a>
+          </li>
+                  <li class="nav-item">
+                <a class="nav-link me-2" href="SectorIV.onrender.com">
+                  <i class="fa fa-user opacity-6 text-dark me-1"></i>
+               Sign In
+                </a>
+              </li>
+              <li class="nav-item">
+            <a class="nav-link me-2" href="SectorIV.onrender.com">
+              <i class="fa fa-user opacity-6 text-dark me-1"></i>
+           About
+            </a>
+          </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      </br>
+      </br>
+      </br>
+    <!-- End Navbar -->
+
+       <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">weekend</i>
+              </div>
+              <a href="{{url_for('AllSinks')}}">
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize"> Manage Conversations </p>
+                <h4 class="mb-0"> Conversations </h4>
+              </div>
+              </a>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+               <a href="{{url_for('Conversation')}}">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> Start Conversing </span> </p>
+            </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">person</i>
+              </div>
+              <a href="{{url_for('Surveys' , UniqueID = Session_Profile )}}">
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize"> Manage Surveys </p>
+                <h4 class="mb-0"> Surveys </h4>
+              </div>
+              </a>
+            </div>
+            <hr class="dark horizontal my-0">
+
+            <div class="card-footer p-3">
+                 <a href="{{url_for('CreateSurvey')}}">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> Create Survey </span>   </p>
+            </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">person</i>
+              </div>
+              <a href="{{url_for('Links' , UniqueID = Session_Profile )}}">
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize"> Manage  Links </p>
+                <h4 class="mb-0">  Upload Links  </h4>
+              </div>
+              </a>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+                <a href="{{url_for('CreateLink')}}">
+              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder"> Create Link  </span>    </p>
+            </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="card">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">weekend</i>
+              </div>
+              <a href="{{url_for('Groupings' , UniqueID='merlin')}}">
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize"> Manage Groups  </p>
+                <h4 class="mb-0"> My Groups </h4>
+              </div>
+              </a>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <a href="{{url_for('CreateGroup')}}">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> Create New Groups </span>    </p>
+            </a>
+            </div>
+          </div>
+        </div>
+               </br>
+                     </br>
+                     </br>
+      </div>
+
+
+      <div class="row mt-4" style="margin-top:15px">
+       <div class="col-lg-12 col-md-6 mb-md-0 mb-4" style="margin-top:15px">
+          <div class="card ">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+              <div class="border-radius-lg py-3 pe-1">
+
+     <div class="card-header pb-0">
+              <h6> Network Highlights </h6>
+              <p class="text-sm">
+                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+                <span class="font-weight-bold">24</span> Refresh
+              </p>
+            </div>
+
+               <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+
+                   series: [{
+                          name: 'Conversations',
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        }, {
+                          name: 'Surveys',
+                          data: [11, 32, 45, 32, 34, 52, 41],
+                        }, {
+                          name: 'Upload Links',
+                          data: [15, 11, 32, 18, 9, 24, 11],
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="mb-0 ">  Performance & Projections </h6>
+              <p class="text-sm "> Wave Traffic Statistics </p>
+              <hr class="dark horizontal">
+              <div class="d-flex ">
+                <i class="material-icons text-sm my-auto me-1">schedule</i>
+                 <p class="mb-0 text-sm">  Last Update <span>  12:00:23 Wednesday</span> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+
+
+
+      <div class="row mb-4">
+        <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-8 col-7">
+                  <h6> Conversation Billboard </h6>
+                  <p class="text-sm mb-0">
+                    <i class="fa fa-check text-info" aria-hidden="true"></i>
+                    <span class="font-weight-bold ms-1">{Completed} Finished </span> |  {Running} Running
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+
+              <div class="table-responsive">
+
+
+                  <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Operation ID </th>
+
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Owner </th>
+
+               <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Platform </th>
+
+         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Activity </th>
+
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Dumpfile </th>
+
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
+                                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"> Targets </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+          {% for Conversation in Conversation_Data[0:5]  %}
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="{{url_for('static',filename="assets/img/small-logos/logo-atlassian.svg")}}" class="avatar avatar-sm me-3" alt="atlassian">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{Conversation[0]}}</h6>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> {{Conversation[1]}} </span>
+                      </td>
+
+                 <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> {{Conversation[2]}}</span>
+                      </td>
+              <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> {{Conversation[3]}} </span>
+                      </td>
+            <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> {{Conversation[4]}} </span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">10%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                          <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                            <img src="{{url_for('static',filename="assets/img/team-2.jpg")}}" alt="team5">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                            <img src="{{url_for('static',filename="assets/img/team-4.jpg")}}" alt="team6">
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+          {% endfor %}
+
+                  </tbody>
+                </table>
+
+
+           {%if DataStatus == "True" %}
+             <div class="col-lg-12" style="border:0.2px solid lightgrey; margin-left:1.5%; width:95%;">
+               <div class="card">
+            <img src="{{url_for('static', filename='assets/img/card.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> 0 Conversations Found</h5>
+              <p class="card-text"> No Conversation Events Recorded . Click  Create Conversations To Deploy An Event . </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+        </div>
+
+{%endif%}
+ <div class="col-lg-12" style="border:0.2px solid lightgrey; margin-left:1.5%; width:95%;">
+   <div class="animation-loading" style="max-height:100px; overflow:none;">
+     <div class="item one"> </div>
+     <div class="item two"> </div>
+     <div class="item three"> </div>
+
+</div>
+</div>
+</br>
+              </div>
+            <a href="{{url_for('AllSinks')}}">  <button type="button" class="btn bg-gradient-primary btn-lg " style="margin:0px 35% ; width:25%;">  View More </button> </a>
+              <br>
+              <br>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100">
+            <div class="card-header pb-0">
+              <h6> Cell Requests </h6>
+              <p class="text-sm">
+                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+                <span class="font-weight-bold">24</span> Received Today
+              </p>
+            </div>
+
+   {%if RequestStatus == "True" %}
+   <div class="col-lg-12" style="border:0.2px solid lightgrey; margin-left:1.5%; width:95%;">
+          <!-- Card with an image on top -->
+          <div class="card">
+            <img src="{{url_for('static', filename='assets/img/card.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> You Have 0 Requests .</h5>
+              <p class="card-text"> Requests Posted To your  Account Will Appear Here </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+</div>
+          <!-- Card with an image on bottom -->
+{% endif %}
+
+
+             <div class="card-body p-3">
+                  <ul class="list-group">
+                   {%  for Profile in Request_Data[0:4] %}
+                    <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
+                      <div class="avatar me-3">
+                        <img src="{{url_for('static',filename="assets/img/kal-visuals-square.jpg")}}" alt="kal" class="border-radius-lg shadow">
+                      </div>
+                      <div class="d-flex align-items-start flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm"> {{Profile[1]}}</h6>
+                        <p class="mb-0 text-xs"> {{Profile[4]}}</p>
+                      </div>
+                      <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="{{url_for('GroupSend' , UniqueID = Profile[0])}}"> Reply </a>
+                    </li>
+       {% endfor %}
+
+       <div class="animation-loading" style="max-height:100px; overflow:none;">
+         <div class="item one"> </div>
+         <div class="item two"> </div>
+         <div class="item three"> </div>
+
+</div>
+
+      </div>
+          <a href="{{url_for('AllSinks')}}">  <button type="button" class="btn bg-gradient-primary btn-lg " style="margin:0px 30% ; width:45%;"> View More </button> </a>
+            </br>
+           </div>
+
+         </div>
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                Developed For IntraCommunication  <i class="fa fa-heart"></i> By
+                <a href="https://www.The_Doctor.com" class="font-weight-bold" target="_blank"> THE_DOCTOR </a>
+                For A Better Informed Society
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.The_Doctor.com" class="nav-link text-muted" target="_blank"> THE_DOCTOR </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.The_Doctor.com/presentation" class="nav-link text-muted" target="_blank">About </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.The_Doctor.com/blog" class="nav-link text-muted" target="_blank"> Contact </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.The_Doctor.com/license" class="nav-link pe-0 text-muted" target="_blank"> Licensing & Information </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+  <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="material-icons py-2">settings</i>
+    </a>
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0"> Optional Display Settings </h5>
+          <p> User Interface Settings </p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0"> Side Navigation Color Scheme  </h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+          </div>
+        </a>
+        <!-- Sidenav Type -->
+        <div class="mt-3">
+          <h6 class="mb-0"> Background  Options </h6>
+          <p class="text-sm"> Select Preferred Color Schemes   </p>
+        </div>
+        <div class="d-flex">
+          <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+        </div>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        <!-- Navbar Fixed -->
+        <div class="mt-3 d-flex">
+          <h6 class="mb-0"> Delivery Notification </h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-3">
+        <div class="mt-2 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-sm-4">
+
+        <div class="w-100 text-center">
+
+          <h6 class="mt-3"> Communication Through Digital Technology </h6>
+          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40The_Doctor%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.The_Doctor.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.The_Doctor.com/product/material-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="{{url_for('static',filename="assets/js/core/popper.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/js/core/bootstrap.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/js/plugins/perfect-scrollbar.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/js/plugins/smooth-scrollbar.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/js/plugins/chartjs.min.js")}}"></script>
+    <script src="{{url_for('static',filename="assets/vendor/apexcharts/apexcharts.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/chart.js/chart.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/echarts/echarts.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/quill/quill.min.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/simple-datatables/simple-datatables.js")}}"></script>
+  <script src="{{url_for('static',filename="assets/vendor/tinymce/tinymce.min.js")}}"></script>
+  <script>
+    var ctx = document.getElementById("chart-bars").getContext("2d");
+
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["M", "T", "W", "T", "F", "S", "S"],
+        datasets: [{
+          label: "Sales",
+          tension: 0.4,
+          borderWidth: 0,
+          borderRadius: 4,
+          borderSkipped: false,
+          backgroundColor: "rgba(255, 255, 255, .8)",
+          data: [50, 20, 10, 22, 50, 10, 40],
+          maxBarThickness: 6
+        }, ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 500,
+              beginAtZero: true,
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+              color: "#fff"
+            },
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+
+    var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+    new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0,
+          borderWidth: 0,
+          pointRadius: 5,
+          pointBackgroundColor: "rgba(255, 255, 255, .8)",
+          pointBorderColor: "transparent",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderWidth: 4,
+          backgroundColor: "transparent",
+          fill: true,
+          data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+
+    new Chart(ctx3, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0,
+          borderWidth: 0,
+          pointRadius: 5,
+          pointBackgroundColor: "rgba(255, 255, 255, .8)",
+          pointBorderColor: "transparent",
+          borderColor: "rgba(255, 255, 255, .8)",
+          borderWidth: 4,
+          backgroundColor: "transparent",
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5],
+              color: 'rgba(255, 255, 255, .2)'
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#f8f9fa',
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#f8f9fa',
+              padding: 10,
+              font: {
+                size: 14,
+                weight: 300,
+                family: "Roboto",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{url_for('static',filename="assets/js/material-dashboard.min.js")}}"></script>
+</body>
+
+</html>
